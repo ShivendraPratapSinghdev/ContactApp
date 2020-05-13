@@ -1,0 +1,20 @@
+<div>
+    <table class="container">
+        <tr>
+            <th>Name</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let contactDetail of contactList">
+            <td>{{contactDetail.firstName}} {{contactDetail.lastName}}</td>
+            <td>{{ contactDetail.phoneNumber }}</td>
+            <td>{{contactDetail.email}}</td>
+            <button (click)="editModal(contactDetail.id)">Edit</button>
+        </tr>
+    </table>
+</div>
+<app-modal id="modal_1" class="hhidden">
+    <app-contact-form></app-contact-form>
+    <button class="spacing" (click)="checkDialog()">Save Contact</button>
+    <button (click)="closeDialog()">Close Dialog</button>
+</app-modal>

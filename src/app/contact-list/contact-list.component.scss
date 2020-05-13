@@ -1,0 +1,27 @@
+.container{
+ margin: 69px;  
+}
+table,tr{
+    th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+}
+.hhidden {
+    display: none;
+  }
+  app-modal { 
+    button {
+    color: white;
+    background-color: #4b4b4b;
+    border: 1px solid black;
+  }}
+  .displayBox{
+    width: 20px;
+    height:20px;
+  }
+  .spacing{
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 40%;
+  }

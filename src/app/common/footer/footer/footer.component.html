@@ -1,0 +1,12 @@
+<footer id="footer">
+  <div id="content">
+    <button class="addContactDetails" (click)="OpenModal()">
+      <img class="updateSize" src="assets/img/plus.png" alt="AddContactsDetails" />
+    </button>
+  </div>
+</footer>
+<app-modal id="modal_2" class="hhidden">
+  <app-contact-form></app-contact-form>
+  <button class="spacing" (click)="saveModal()">Save Contact</button>
+  <button (click)="closeDialog()">Close Dialog</button>
+</app-modal>

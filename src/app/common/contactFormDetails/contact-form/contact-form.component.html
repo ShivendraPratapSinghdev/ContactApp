@@ -1,0 +1,27 @@
+<div [formGroup]="contactForm">
+  <div *ngFor="let controlName of Object.keys(contactForm.value)" class="alignment">
+    <div *ngIf="controlName != 'status' && controlName != 'id'">
+      <label for="{{ controlName }}">
+        {{controlName}}
+      </label>
+      <input class="alignment"
+        [ngClass]="{errorColor : (contactForm.get(controlName).touched || isSubmitted) && contactForm.get(controlName).hasError('required')}"
+        type="text" formControlName="{{ controlName }}" />
+      <div>
+        <p class="form-error-message"
+          *ngIf="(contactForm.get(controlName).touched || isSubmitted) && contactForm.get(controlName).hasError('required')">
+          Please provide {{ controlName }}
+        </p>
+        <p class="form-error-message"
+          *ngIf="controlName != 'email' && (contactForm.get(controlName).touched || isSubmitted) && contactForm.get(controlName).hasError('pattern')">
+          Please provide data for {{ controlName }} in valid Format.
+        </p>
+        <p class="form-error-message"
+          *ngIf="controlName == 'email' && (contactForm.get(controlName).touched || isSubmitted) && contactForm.get(controlName).hasError('email')">
+          Please provide data for {{ controlName }} in valid Format.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>

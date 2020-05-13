@@ -1,0 +1,14 @@
+<div *ngFor="let contactDetail of contactList">
+    <div class="container">
+        <div class="left">
+            <span>{{contactDetail.firstName}}{{contactDetail.lastName}}</span>
+            <div>
+                {{contactDetail.phoneNumber}}
+            </div>
+        </div>
+        <label class="switch right">
+            <input type="checkbox" (click)="update(contactDetail.id)" [checked]="contactDetail.status">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
